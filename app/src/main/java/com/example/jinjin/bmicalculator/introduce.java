@@ -20,10 +20,7 @@ public class introduce extends AppCompatActivity {
         tv1 = (TextView) findViewById(R.id.tv1);
         ActionBar supportActionBar = getSupportActionBar();
         supportActionBar.setTitle("软件介绍");
-        tv1.setText(Html.fromHtml("<a href='http://beian.miit.gov.cn/'>闽ICP备2022001998号</a><br/><a href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35072502001025'>闽公网安备35072502001025号</a>"));
+        tv1.setText(Html.fromHtml("<a href=\"http://beian.miit.gov.cn/\">闽ICP备2022001998号</a><br/><a href=\"http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35072502001025\">闽公网安备35072502001025号</a>"));
         tv1.setMovementMethod(LinkMovementMethod.getInstance());
     }
-
-
-
 }

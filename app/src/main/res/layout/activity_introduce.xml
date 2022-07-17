@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="190dp"
-            android:layout_marginTop="600dp"
+            android:layout_marginTop="560dp"
             android:text="软件名：BMI体质计算器"
             android:textSize="15sp" />
 
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="259dp"
-            android:layout_marginTop="620dp"
+            android:layout_marginTop="580dp"
             android:text="版本号：1.0"
             android:textSize="15sp" />
 
