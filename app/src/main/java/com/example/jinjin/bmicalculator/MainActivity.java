@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,7 +23,7 @@ import java.text.BreakIterator;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText weight, height;
     Button btn, nan, nv;
-    TextView shuchu;
+    TextView shuchu, jshao;
     String info = null;
 
 
@@ -46,6 +48,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 shuchu.setText(info);
             }
         });
+        //设置文本内容
+        String text = "BMI计算器是一款计算BMI的软件，它可以帮助您计算您的BMI，并且提供相应的建议。";
+        SpannableString ss = new SpannableString(text);
+        //设置字体大小
+        ss.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //设置字体颜色
+        ss.setSpan(new android.text.style.ForegroundColorSpan(0xFF0000FF), 0, 3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //设置字体下划线
+        ss.setSpan(new android.text.style.UnderlineSpan(), 0, 3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //设置字体样式
+        //var str="BMI计算器是一款计算BMI的软件，它可以帮助您计算您的BMI，并且提供相应的建议。";
+        //console.log(str.length);   得出 42
+        ss.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.ITALIC), 0, 42, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        jshao = (TextView) findViewById(R.id.jshao);
+        jshao.setText(ss);
     }
 
     @Override
@@ -88,10 +105,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+    //onCreateOptionsMenu是一个方法，用来创建菜单，在这里我们可以创建菜单，并且返回一个boolean值，如果返回true，则菜单显示出来，如果返回false，则菜单不显示。
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(1, 1, 1, "软件介绍");
         menu.add(1, 2, 2, "退出软件");
-        return true;
+        menu.add(1, 3, 3, "设置");
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -112,3 +131,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 }
+

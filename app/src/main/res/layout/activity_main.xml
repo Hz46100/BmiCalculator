@@ -98,5 +98,14 @@
         android:text="这里是结果QaQ  输入我记得看瞅瞅我"
         android:textColor="#EE709B" />
 
+    <TextView
+        android:id="@+id/jshao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="220dp"
+        android:text=""
+        android:textColor="#EE709B" />
+
 
 </LinearLayout>
