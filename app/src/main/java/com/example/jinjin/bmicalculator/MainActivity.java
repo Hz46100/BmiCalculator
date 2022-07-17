@@ -126,6 +126,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //关闭软件
                 this.finish();
                 return true;
+            case 3:
+                Toast.makeText(this, "设置", Toast.LENGTH_SHORT).show();
+                //跳转到软件介绍页面
+                Intent intent2 = new Intent(MainActivity.this, setting.class);
+                startActivity(intent2);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

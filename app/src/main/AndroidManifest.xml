@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bmicalculator">
         <activity
+            android:name=".setting"
+            android:exported="false" />
+        <activity
             android:name=".introduce"
             android:exported="false" />
         <activity
