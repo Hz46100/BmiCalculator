@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue_FF5670FE">#77CBEF</color>
+    <color name="gray">@android:color/system_accent2_400</color>
+    <color name="pick">#F88B8B</color>
+
 </resources>

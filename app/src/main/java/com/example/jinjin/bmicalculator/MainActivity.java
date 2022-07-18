@@ -5,6 +5,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -42,11 +44,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         eyes = (ImageButton) findViewById(R.id.eyes);
         nv = (RadioButton) findViewById(R.id.nv);
         shuchu = (TextView) findViewById(R.id.shuchu);
-        //去除系统标题栏
+
+        //系统标题栏默认打开软件是pick
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
-        }
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#F88B8B")));
+
         //给RadioGroup1绑定监听器
         nan.setOnClickListener(this);
         nv.setOnClickListener(this);
@@ -147,7 +149,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     //护眼模式控件
+    //开始计算 按钮 btn
+    //系统标题栏 actionBar
     public void imgs(View view) {
+        //系统标题栏
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#F88B8B")));
         count++;
         //点击按钮判断count是否为单数，如果是，则变黑色，否则恢复白色
         if (count % 2 == 1) {
@@ -156,7 +163,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //把activity背景变成黑色
 //            getWindow().getDecorView().setBackgroundResource(R.drawable.background);
             getWindow().getDecorView().setBackgroundResource(android.R.color.system_accent1_600);
-            //改变按钮的文本
+            //改变按钮颜色
+            btn.setBackgroundResource(R.color.gray);
+            //改变actionBar颜色
+            actionBar.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
         } else if (count % 2 == 0) {
             //删除控件背景图
             view.setBackground(null);
@@ -164,7 +174,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             eyes.setBackgroundResource(R.drawable.moon);
             //再次点击按钮恢复原来的颜色
             getWindow().getDecorView().setBackgroundResource(R.color.white);
-            //改变按钮的文本
+            //改变按钮颜色
+            btn.setBackgroundResource(R.color.blue_FF5670FE);
+            //改变actionBar颜色
+            actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#F88B8B")));
         }
     }
 }
