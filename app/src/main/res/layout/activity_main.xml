@@ -108,14 +108,13 @@
 
         <TextView
             android:id="@+id/jshao"
-            android:layout_width="290dp"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text=""
             android:textColor="#EE709B" />
 
         <ImageButton
-
             android:id="@+id/eyes"
             android:layout_width="25dp"
             android:layout_height="25dp"
