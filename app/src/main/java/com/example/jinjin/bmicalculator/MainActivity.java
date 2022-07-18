@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -23,9 +25,10 @@ import java.text.BreakIterator;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText weight, height;
     Button btn, nan, nv;
+    ImageButton eyes;
     TextView shuchu, jshao;
     String info = null;
-
+    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +39,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         height = (EditText) findViewById(R.id.height);
         btn = (Button) findViewById(R.id.btn);
         nan = (RadioButton) findViewById(R.id.nan);
+        eyes = (ImageButton) findViewById(R.id.eyes);
         nv = (RadioButton) findViewById(R.id.nv);
         shuchu = (TextView) findViewById(R.id.shuchu);
+        //去除系统标题栏
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
         //给RadioGroup1绑定监听器
         nan.setOnClickListener(this);
         nv.setOnClickListener(this);
@@ -134,6 +143,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    //护眼模式控件
+    public void imgs(View view) {
+        count++;
+        //点击按钮判断count是否为单数，如果是，则变黑色，否则恢复白色
+        if (count % 2 == 1) {
+            //改变ImageButton图片
+            eyes.setBackgroundResource(R.drawable.sun);
+            //把activity背景变成黑色
+//            getWindow().getDecorView().setBackgroundResource(R.drawable.background);
+            getWindow().getDecorView().setBackgroundResource(android.R.color.system_accent1_600);
+            //改变按钮的文本
+        } else if (count % 2 == 0) {
+            //删除控件背景图
+            view.setBackground(null);
+            //改变ImageButton图片
+            eyes.setBackgroundResource(R.drawable.moon);
+            //再次点击按钮恢复原来的颜色
+            getWindow().getDecorView().setBackgroundResource(R.color.white);
+            //改变按钮的文本
         }
     }
 }

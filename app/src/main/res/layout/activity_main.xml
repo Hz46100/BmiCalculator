@@ -16,7 +16,6 @@
         android:textColor="#F1766C"
         android:textSize="30sp" />
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -79,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="女" />
+
         </RadioGroup>
     </LinearLayout>
 
@@ -98,14 +98,29 @@
         android:text="这里是结果QaQ  输入我记得看瞅瞅我"
         android:textColor="#EE709B" />
 
-    <TextView
-        android:id="@+id/jshao"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="320dp"
-        android:text=""
-        android:textColor="#EE709B" />
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/jshao"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text=""
+            android:textColor="#EE709B" />
+
+        <ImageButton
+
+            android:id="@+id/eyes"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="imgs"
+            android:scaleType="center" />
+    </LinearLayout>
 
 
 </LinearLayout>
